@@ -3,11 +3,6 @@
  */
 package com.insurance.services.web;
 
-import io.pivotal.microservices.services.web.HomeController;
-import io.pivotal.microservices.services.web.WebAccountsController;
-import io.pivotal.microservices.services.web.WebAccountsService;
-import io.pivotal.microservices.services.web.WebServer;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
