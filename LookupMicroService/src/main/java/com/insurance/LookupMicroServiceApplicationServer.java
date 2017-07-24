@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +17,7 @@ import com.insurance.utils.PDFManager;
 
 @EnableAutoConfiguration
 @EnableDiscoveryClient
-public class LookupMicroServiceApplicationServer {
+public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 	
 	@Autowired
 	protected CodeLookupService codeLookupService;
@@ -30,6 +31,10 @@ public class LookupMicroServiceApplicationServer {
 		System.setProperty("spring.config.name", "lookup-server");
 		SpringApplication.run(LookupMicroServiceApplicationServer.class, args);
 		
+	}
+	
+	@Override
+    public void run(String... arg0) throws Exception {
 		PDFManager	pdfManager	= new PDFManager();
 		pdfManager.setFilePath("data/fastcompclasscodecrossreferenceguide.pdf");
 		String[] arrayOfPDFLines = pdfManager.ToText().split("\n");
