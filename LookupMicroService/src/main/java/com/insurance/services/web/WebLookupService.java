@@ -25,10 +25,9 @@ public class WebLookupService {
 	@LoadBalanced
 	protected RestTemplate restTemplate;
 
-	protected String serviceUrl;
+	protected String serviceUrl = "http://LOOKUP-SERVICE";;
 
-	protected Logger logger = Logger.getLogger(WebLookupService.class
-			.getName());
+	protected Logger logger = Logger.getLogger(WebLookupService.class.getName());
 
 	/**
 	 * The RestTemplate works because it uses a custom request-factory that uses
@@ -44,7 +43,6 @@ public class WebLookupService {
 	}
 	
 	public InsuranceCodeContainer findByCode(String codeNumber) {
-		this.serviceUrl = "http://LOOKUP-SERVICE";
 		logger.info("findByCode() invoked: for " + codeNumber);
 		return restTemplate.getForObject(serviceUrl + "/codes/{codeNumber}",
 				InsuranceCodeContainer.class, codeNumber);
