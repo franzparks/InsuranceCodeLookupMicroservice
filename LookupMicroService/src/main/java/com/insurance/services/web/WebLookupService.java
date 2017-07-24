@@ -3,6 +3,8 @@
  */
 package com.insurance.services.web;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +12,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -42,10 +45,55 @@ public class WebLookupService {
 				+ restTemplate.getRequestFactory().getClass());
 	}
 	
-	public InsuranceCodeContainer findByCode(String codeNumber) {
-		logger.info("findByCode() invoked: for " + codeNumber);
-		return restTemplate.getForObject(serviceUrl + "/codes/{codeNumber}",
-				InsuranceCodeContainer.class, codeNumber);
+	public List<InsuranceCodeContainer> findByCaWC(String codeNumber) {
+		logger.info("findByCaWC() invoked: for " + codeNumber);
+		InsuranceCodeContainer containers[] = null;
+		
+		try {
+			containers = restTemplate.getForObject(serviceUrl
+					+ "/codes/cacw/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
+		} catch (HttpClientErrorException e) { // 404
+			// Nothing found
+		}
+
+		if (containers == null || containers.length == 0)
+			return null;
+		else
+			return Arrays.asList(containers);
+	}
+	
+	public List<InsuranceCodeContainer> findByNAICS(String codeNumber) {
+		logger.info("findByNAICS() invoked: for " + codeNumber);
+		InsuranceCodeContainer containers[] = null;
+		
+		try {
+			containers = restTemplate.getForObject(serviceUrl
+					+ "/codes/naics/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
+		} catch (HttpClientErrorException e) { // 404
+			// Nothing found
+		}
+
+		if (containers == null || containers.length == 0)
+			return null;
+		else
+			return Arrays.asList(containers);
+	}
+	
+	public List<InsuranceCodeContainer> findByNCCI(String codeNumber) {
+		logger.info("findByNCCI() invoked: for " + codeNumber);
+		InsuranceCodeContainer containers[] = null;
+		
+		try {
+			containers = restTemplate.getForObject(serviceUrl
+					+ "/codes/ncci/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
+		} catch (HttpClientErrorException e) { // 404
+			// Nothing found
+		}
+
+		if (containers == null || containers.length == 0)
+			return null;
+		else
+			return Arrays.asList(containers);
 	}
 
 
