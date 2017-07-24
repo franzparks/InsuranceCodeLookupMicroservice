@@ -11,6 +11,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +22,9 @@ import org.springframework.web.client.RestTemplate;
  * @author francisphiri
  *
  */
-@Service
+//@Configuration
+//@Service
+@Component
 public class WebLookupService {
 	
 	@Autowired
@@ -32,10 +36,11 @@ public class WebLookupService {
 	protected Logger logger = Logger.getLogger(WebLookupService.class
 			.getName());
 
-	public WebLookupService(String serviceUrl) {
+	//@Autowired
+	/*public WebLookupService(String serviceUrl) {
 		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
 				: "http://" + serviceUrl;
-	}
+	}*/
 
 	/**
 	 * The RestTemplate works because it uses a custom request-factory that uses

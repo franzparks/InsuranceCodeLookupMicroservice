@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author francisphiri
  *
  */
-public class WebAccountsController {
+public class WebLookupsController {
 	
 	@Autowired
-	protected WebLookupService accountsService;
+	protected WebLookupService lookupService;
 
-	protected Logger logger = Logger.getLogger(WebAccountsController.class
+	protected Logger logger = Logger.getLogger(WebLookupsController.class
 			.getName());
 
-	public WebAccountsController(WebLookupService accountsService) {
-		this.accountsService = accountsService;
+	public WebLookupsController(WebLookupService lookupService) {
+		this.lookupService = lookupService;
 	}
 	
 	@RequestMapping("/codes")
@@ -32,15 +32,20 @@ public class WebAccountsController {
 		return "index";
 	}
 	
+	@RequestMapping("/codes/all")
+	public InsuranceCodeContainer allCodes() {
+		return lookupService.findByCode("1741");
+		//return "index";
+	}
 	@RequestMapping("/codes/{codeNumber}")
 	public String byCodeNumber(Model model,
 			@PathVariable("codeNumber") String codeNumber) {
 
 		logger.info("web-service byCodeNumber() invoked: " + codeNumber);
 
-		InsuranceCodeContainer codeContainer = accountsService.findByCode(codeNumber);
-		logger.info("web-service byCode() found: " + codeContainer);
-		model.addAttribute("account", codeContainer);
-		return "codeContainer";
+		//InsuranceCodeContainer codeContainer = accountsService.findByCode(codeNumber);
+		//logger.info("web-service byCode() found: " + codeContainer);
+		//model.addAttribute("codeContainer", codeContainer);
+		return "index";
 	}
 }

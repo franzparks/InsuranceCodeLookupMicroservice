@@ -6,6 +6,7 @@ package com.insurance.services.web;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
@@ -33,6 +34,7 @@ public class WebServer {
 		SpringApplication.run(WebServer.class, args);
 	}
 	
+	@LoadBalanced
 	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();
@@ -44,20 +46,20 @@ public class WebServer {
 	 * 
 	 * @return A new service instance.
 	 */
-	@Bean
-	public WebLookupService lookupService() {
-		return new WebLookupService(LOOKUP_SERVICE_URL);
-	}
+	//@Bean
+	//public WebLookupService lookupService() {
+	//	return new WebLookupService(LOOKUP_SERVICE_URL); //
+	//}
 
 	/**
 	 * Create the controller, passing it the {@link WebLookupService} to use.
 	 * 
 	 * @return
 	 */
-	@Bean
-	public WebAccountsController accountsController() {
-		return new WebAccountsController(lookupService());
-	}
+	//@Bean
+	//public WebLookupsController accountsController() {
+	//	return new WebLookupsController(lookupService());
+	//}
 
 	@Bean
 	public HomeController homeController() {
