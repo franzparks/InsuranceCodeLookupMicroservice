@@ -13,19 +13,19 @@ import com.insurance.domain.InsuranceCodeContainer;
  */
 
 public interface CodeLookupService {
-	InsuranceCodeContainer findByISODescription(String text);
-	InsuranceCodeContainer findByNAICS(String text);
-	InsuranceCodeContainer findByGeneralDescription(String text);
-	InsuranceCodeContainer findByGeneralDescriptionContains(String text);
-	InsuranceCodeContainer findByGeneralDescriptionIgnoreCase(String text);
-	InsuranceCodeContainer findByNCCI(String text);
+	List<InsuranceCodeContainer> findByISODescription(String text);
+	List<InsuranceCodeContainer> findByNAICS(String text);
+	List<InsuranceCodeContainer> findByGeneralDescription(String text);
+	List<InsuranceCodeContainer> findByGeneralDescriptionContains(String text);
+	List<InsuranceCodeContainer> findByGeneralDescriptionIgnoreCase(String text);
+	List<InsuranceCodeContainer> findByNCCI(String text);
 	List<InsuranceCodeContainer> findByCaWC(String text);
-	InsuranceCodeContainer findByDeWC(String text);
-	InsuranceCodeContainer findByMiWC(String text);
-	InsuranceCodeContainer findByNyWC(String text);
-	InsuranceCodeContainer findByNjWC(String text);
-	InsuranceCodeContainer findByPaWC(String text);
-	InsuranceCodeContainer findByTxWC(String text);
-	InsuranceCodeContainer save(InsuranceCodeContainer container);
+	List<InsuranceCodeContainer> findByDeWC(String text);
+	List<InsuranceCodeContainer> findByMiWC(String text);
+	List<InsuranceCodeContainer> findByNyWC(String text);
+	List<InsuranceCodeContainer> findByNjWC(String text);
+	List<InsuranceCodeContainer> findByPaWC(String text);
+	List<InsuranceCodeContainer> findByTxWC(String text);
+	List<InsuranceCodeContainer> save(InsuranceCodeContainer container);
 	
 }
