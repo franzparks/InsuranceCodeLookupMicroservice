@@ -29,7 +29,7 @@ public class CodeLookupServiceImp implements CodeLookupService {
 	}
 	
 	@Override
-	public InsuranceCodeContainer findByGeneralDescription(String text) {
+	public List<InsuranceCodeContainer> findByGeneralDescription(String text) {
 		return insuranceCodeContainerRepository.findByGeneralDescription(text);
 	}
 	
@@ -84,7 +84,7 @@ public class CodeLookupServiceImp implements CodeLookupService {
 	}
 
 	@Override
-    public List<InsuranceCodeContainer>  save(List<InsuranceCodeContainer>  container) {
+    public InsuranceCodeContainer  save(InsuranceCodeContainer  container) {
 		return insuranceCodeContainerRepository.save(container);
     }
 	
