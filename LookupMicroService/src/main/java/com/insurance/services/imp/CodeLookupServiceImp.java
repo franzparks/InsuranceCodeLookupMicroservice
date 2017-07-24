@@ -1,8 +1,10 @@
 package com.insurance.services.imp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.insurance.domain.InsuranceCodeContainer;
+import com.insurance.repository.InsuranceCodeContainerRepository;
 import com.insurance.services.CodeLookupService;
 /**
  * @author francisphiri
@@ -10,6 +12,9 @@ import com.insurance.services.CodeLookupService;
  */
 @Service
 public class CodeLookupServiceImp implements CodeLookupService {
+	
+	@Autowired
+	private InsuranceCodeContainerRepository insuranceCodeContainerRepository;
 	
 	@Override
 	public InsuranceCodeContainer findByISODescription(String text) {
