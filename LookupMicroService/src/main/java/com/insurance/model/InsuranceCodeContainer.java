@@ -16,7 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
-public class IndustryCodeContainer implements Serializable{
+public class InsuranceCodeContainer implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -50,7 +50,7 @@ public class IndustryCodeContainer implements Serializable{
 	
 	protected String TX_WC;
 	
-	IndustryCodeContainer(){}
+	InsuranceCodeContainer(){}
 
 	public String getISO_DESCRIPTION() {
 		return ISO_DESCRIPTION;
