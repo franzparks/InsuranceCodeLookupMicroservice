@@ -3,6 +3,7 @@
  */
 package com.insurance.services.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -27,6 +28,9 @@ public class WebServer {
 	 * doesn't matter.
 	 */
 	public static final String LOOKUP_SERVICE_URL = "http://LOOKUP-SERVICE";
+	
+	@Autowired
+	protected WebLookupService lookupService;
 	
 	public static void main(String[] args) {
 		// Tell server to look for web-server.properties or web-server.yml
@@ -57,7 +61,7 @@ public class WebServer {
 	 * @return
 	 */
 	//@Bean
-	//public WebLookupsController accountsController() {
+	//public WebLookupsController lookupController() {
 	//	return new WebLookupsController(lookupService());
 	//}
 
