@@ -44,7 +44,7 @@ public class WebServer {
 	 * 
 	 * @return A new service instance.
 	 */
-	//@Bean
+	@Bean
 	public WebLookupService lookupService() {
 		return new WebLookupService(LOOKUP_SERVICE_URL);
 	}
