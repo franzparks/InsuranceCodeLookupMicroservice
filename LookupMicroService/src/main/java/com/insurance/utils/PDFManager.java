@@ -15,10 +15,10 @@ public class PDFManager {
 	
 	private String filePath;
 	
-public NewPDFManager() {
+	public PDFManager() {
         
     }
-   public String ToText(){
+    public String ToText(){
 	   PDDocument document = null; 
 	   String text = "";
 	   try{
@@ -37,11 +37,9 @@ public NewPDFManager() {
 			}
 
 	   return text;
-   }
+    }
    
-   public void setFilePath(String filePath) {
+    public void setFilePath(String filePath) {
        this.filePath = filePath;
-   }
-
-	
+    }
 }
