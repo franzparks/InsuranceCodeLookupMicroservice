@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
@@ -16,12 +17,13 @@ import com.insurance.domain.InsuranceCodeContainer;
 import com.insurance.services.CodeLookupService;
 import com.insurance.utils.PDFManager;
 
+@SpringBootApplication
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 	
 	@Autowired
-	protected CodeLookupService codeLookupService;
+	private CodeLookupService codeLookupService;
 	
 	protected Logger logger = Logger.getLogger(LookupMicroServiceApplicationServer.class.getName());
 

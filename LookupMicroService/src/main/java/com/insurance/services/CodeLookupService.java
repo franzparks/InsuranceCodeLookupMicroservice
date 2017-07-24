@@ -3,12 +3,15 @@
  */
 package com.insurance.services;
 
+import org.springframework.stereotype.Service;
+
 import com.insurance.domain.InsuranceCodeContainer;
 
 /**
  * @author francisphiri
  *
  */
+
 public interface CodeLookupService {
 	InsuranceCodeContainer findByISODescription(String text);
 	InsuranceCodeContainer findByNAICS(String text);
