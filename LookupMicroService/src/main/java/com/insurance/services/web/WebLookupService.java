@@ -23,8 +23,8 @@ import org.springframework.web.client.RestTemplate;
  *
  */
 //@Configuration
-//@Service
-@Component
+@Service
+//@Component
 public class WebLookupService {
 	
 	@Autowired
