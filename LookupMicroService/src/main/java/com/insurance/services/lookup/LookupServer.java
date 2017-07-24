@@ -11,8 +11,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author francisphiri
  *
  */
-@EnableAutoConfiguration
-@EnableDiscoveryClient
+//@EnableAutoConfiguration
+//@EnableDiscoveryClient
 public class LookupServer {
 	
 	public void main(String[] args){
