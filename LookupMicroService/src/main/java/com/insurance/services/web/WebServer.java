@@ -29,8 +29,8 @@ public class WebServer {
 	 */
 	public static final String LOOKUP_SERVICE_URL = "http://LOOKUP-SERVICE";
 	
-	@Autowired
-	protected WebLookupService lookupService;
+	//@Autowired
+	//protected WebLookupService lookupService;
 	
 	public static void main(String[] args) {
 		// Tell server to look for web-server.properties or web-server.yml

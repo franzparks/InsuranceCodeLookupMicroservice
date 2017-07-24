@@ -27,7 +27,7 @@ import com.insurance.utils.PDFManager;
 
 @SpringBootApplication()
 //@EnableAutoConfiguration
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 //@ComponentScan({"com.insurance"})
 //@EntityScan("com.insurance.domain")
 //@EnableJpaRepositories("com.insurance.repository")

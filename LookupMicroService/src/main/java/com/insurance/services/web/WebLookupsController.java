@@ -26,9 +26,9 @@ public class WebLookupsController {
 	protected Logger logger = Logger.getLogger(WebLookupsController.class
 			.getName());
 
-	public WebLookupsController(WebLookupService lookupService) {
+	/*public WebLookupsController(WebLookupService lookupService) {
 		this.lookupService = lookupService;
-	}
+	}*/
 	
 	@RequestMapping("/codes")
 	public String goHome() {
@@ -44,8 +44,9 @@ public class WebLookupsController {
 
 		List<InsuranceCodeContainer> codes = lookupService.findByCaWC(codeNumber);
 		logger.info("web-service byCaWC() found: " + codes);
-		if (codes != null)
+		if (codes != null){
 			model.addAttribute("codes", codes);
+		}
 		return "codes";
 	}
 	
