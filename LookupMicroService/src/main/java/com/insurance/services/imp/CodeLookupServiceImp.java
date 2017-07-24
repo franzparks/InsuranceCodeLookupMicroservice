@@ -80,5 +80,10 @@ public class CodeLookupServiceImp implements CodeLookupService {
 	public InsuranceCodeContainer findByTxWC(String text) {
 		return insuranceCodeContainerRepository.findByTxWC(text).get();
 	}
+
+	@Override
+    public InsuranceCodeContainer save(InsuranceCodeContainer container) {
+		return insuranceCodeContainerRepository.save(container);
+    }
 	
 }

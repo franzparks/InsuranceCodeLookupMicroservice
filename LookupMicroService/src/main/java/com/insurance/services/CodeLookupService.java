@@ -23,5 +23,6 @@ public interface CodeLookupService {
 	InsuranceCodeContainer findByNjWC(String text);
 	InsuranceCodeContainer findByPaWC(String text);
 	InsuranceCodeContainer findByTxWC(String text);
+	InsuranceCodeContainer save(InsuranceCodeContainer container);
 	
 }
