@@ -18,80 +18,67 @@ public class CodeLookupServiceImp implements CodeLookupService {
 	
 	@Override
 	public InsuranceCodeContainer findByISODescription(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByISODescription(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByNAICS(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByNAICS(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByGeneralDescription(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByGeneralDescription(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByGeneralDescriptionContains(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByGeneralDescriptionContains(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByGeneralDescriptionIgnoreCase(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByGeneralDescriptionIgnoreCase(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByNCCI(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByNCCI(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByCaWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByCaWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByDeWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByDeWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByMiWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByMiWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByNyWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByNyWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByNjWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByNjWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByPaWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByPaWC(text).get();
 	}
 	
 	@Override
 	public InsuranceCodeContainer findByTxWC(String text) {
-		// TODO Auto-generated method stub
-		return null;
+		return insuranceCodeContainerRepository.findByTxWC(text).get();
 	}
 	
 }
