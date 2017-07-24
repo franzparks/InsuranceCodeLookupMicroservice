@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 /**
  * Persistent IndustryCodeContainer entity with JPA markup. Accounts are stored in an H2
  * relational database.
@@ -17,6 +19,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@JsonRootName("InsuranceCodeContainer")
 public class InsuranceCodeContainer implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

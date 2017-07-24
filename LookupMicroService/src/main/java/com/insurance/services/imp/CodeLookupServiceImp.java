@@ -1,5 +1,7 @@
 package com.insurance.services.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,8 +49,8 @@ public class CodeLookupServiceImp implements CodeLookupService {
 	}
 	
 	@Override
-	public InsuranceCodeContainer findByCaWC(String text) {
-		return insuranceCodeContainerRepository.findByCaWC(text).get();
+	public List<InsuranceCodeContainer> findByCaWC(String text) {
+		return insuranceCodeContainerRepository.findByCaWC(text);
 	}
 	
 	@Override

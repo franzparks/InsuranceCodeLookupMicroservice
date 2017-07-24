@@ -39,7 +39,8 @@ public class WebLookupsController {
 		return lookupService.findByCode("1741");
 		//return "index";
 	}
-	@RequestMapping("/codes/{codeNumber}")
+	
+	//@RequestMapping("/codes/{codeNumber}")
 	public String byCodeNumber(Model model,
 			@PathVariable("codeNumber") String codeNumber) {
 

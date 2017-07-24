@@ -3,6 +3,7 @@
  */
 package com.insurance.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -23,7 +24,7 @@ public interface InsuranceCodeContainerRepository extends JpaRepository<Insuranc
 	Optional<InsuranceCodeContainer> findByGeneralDescriptionContains(String text);
 	Optional<InsuranceCodeContainer> findByGeneralDescriptionIgnoreCase(String text);
 	Optional<InsuranceCodeContainer> findByNCCI(String text);
-	Optional<InsuranceCodeContainer> findByCaWC(String text);
+	List<InsuranceCodeContainer> findByCaWC(String text);
 	Optional<InsuranceCodeContainer> findByDeWC(String text);
 	Optional<InsuranceCodeContainer> findByMiWC(String text);
 	Optional<InsuranceCodeContainer> findByNyWC(String text);

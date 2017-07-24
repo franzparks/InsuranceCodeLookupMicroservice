@@ -3,6 +3,8 @@
  */
 package com.insurance.services;
 
+import java.util.List;
+
 import com.insurance.domain.InsuranceCodeContainer;
 
 /**
@@ -17,7 +19,7 @@ public interface CodeLookupService {
 	InsuranceCodeContainer findByGeneralDescriptionContains(String text);
 	InsuranceCodeContainer findByGeneralDescriptionIgnoreCase(String text);
 	InsuranceCodeContainer findByNCCI(String text);
-	InsuranceCodeContainer findByCaWC(String text);
+	List<InsuranceCodeContainer> findByCaWC(String text);
 	InsuranceCodeContainer findByDeWC(String text);
 	InsuranceCodeContainer findByMiWC(String text);
 	InsuranceCodeContainer findByNyWC(String text);
