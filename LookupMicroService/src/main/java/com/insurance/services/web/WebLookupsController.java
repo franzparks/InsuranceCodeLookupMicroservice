@@ -42,11 +42,11 @@ public class WebLookupsController {
 
 		logger.info("web-service byCaWC() invoked: " + codeNumber);
 
-		List<InsuranceCodeContainer> containers = lookupService.findByCaWC(codeNumber);
-		logger.info("web-service byCaWC() found: " + containers);
-		if (containers != null)
-			model.addAttribute("containers", containers);
-		return "index";
+		List<InsuranceCodeContainer> codes = lookupService.findByCaWC(codeNumber);
+		logger.info("web-service byCaWC() found: " + codes);
+		if (codes != null)
+			model.addAttribute("codes", codes);
+		return "codes";
 	}
 	
 	@RequestMapping("/codes/naics/{codeNumber}")
@@ -55,11 +55,11 @@ public class WebLookupsController {
 
 		logger.info("web-service byNAICS() invoked: " + codeNumber);
 
-		List<InsuranceCodeContainer> containers = lookupService.findByNAICS(codeNumber);
-		logger.info("web-service byNAICS() found: " + containers);
-		if (containers != null)
-			model.addAttribute("containers", containers);
-		return "index";
+		List<InsuranceCodeContainer> codes = lookupService.findByNAICS(codeNumber);
+		logger.info("web-service byNAICS() found: " + codes);
+		if (codes != null)
+			model.addAttribute("codes", codes);
+		return "codes";
 	}
 	
 	@RequestMapping("/codes/naics/{codeNumber}")
@@ -68,10 +68,10 @@ public class WebLookupsController {
 
 		logger.info("web-service byNCCI() invoked: " + codeNumber);
 
-		List<InsuranceCodeContainer> containers = lookupService.findByNCCI(codeNumber);
-		logger.info("web-service byNCCI() found: " + containers);
-		if (containers != null)
-			model.addAttribute("containers", containers);
-		return "index";
+		List<InsuranceCodeContainer> codes = lookupService.findByNCCI(codeNumber);
+		logger.info("web-service byNCCI() found: " + codes);
+		if (codes != null)
+			model.addAttribute("codes", codes);
+		return "codes";
 	}
 }
