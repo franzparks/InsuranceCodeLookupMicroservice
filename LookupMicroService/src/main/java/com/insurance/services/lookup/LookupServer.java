@@ -18,7 +18,7 @@ public class LookupServer {
 	public void main(String[] args){
 		// Tell server to look for lookup-server.properties or
 		// lookup-server.yml
-		System.setProperty("spring.config.name", "accounts-server");
+		System.setProperty("spring.config.name", "lookup-server");
 
 		SpringApplication.run(LookupServer.class, args);
 	}
