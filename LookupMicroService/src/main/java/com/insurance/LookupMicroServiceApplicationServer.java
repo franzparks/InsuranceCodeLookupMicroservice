@@ -58,9 +58,10 @@ public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 		List<Map<String, String>> listOfMappings = pdfManager.getListOfMappings(arrayOfPDFLines);
 		
 		for(Map<String, String> mapping:listOfMappings){
-			codeLookupService.save(new InsuranceCodeContainer(mapping.get(CODES.ISO_DESC), 
-					mapping.get(CODES.NAICS), mapping.get(CODES.GENERAL_DESC), mapping.get(CODES.NCCI), 
-					mapping.get(CODES.CA_WC)));
+			codeLookupService.save(new InsuranceCodeContainer(mapping.get(CODES.ISO_DESC.toString()), 
+					mapping.get(CODES.NAICS.toString()), mapping.get(CODES.GENERAL_DESC.toString()),
+					mapping.get(CODES.NCCI.toString()), 
+					mapping.get(CODES.CA_WC.toString())));
 		}
 	}
 }
