@@ -35,4 +35,48 @@ public class LookupsController {
 		return codeContainer;
 	}
 	
+	@RequestMapping(value = "/codes/{text}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> findByGeneralDescription(
+			@PathVariable("text") String text) {
+		logger.info("micro-service findByGeneralDescription() invoked: " + text);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByGeneralDescription(text);
+		logger.info("micro-service findByGeneralDescription() found: " + codeContainer);
+		return codeContainer;
+	}
+	
+	@RequestMapping(value = "/codes/{text}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> findByGeneralDescriptionContains(
+			@PathVariable("text") String text) {
+		logger.info("micro-service findByGeneralDescriptionContains() invoked: " + text);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByGeneralDescriptionContains(text);
+		logger.info("micro-service findByGeneralDescriptionContains() found: " + codeContainer);
+		return codeContainer;
+	}
+	
+	@RequestMapping(value = "/codes/{text}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> findByGeneralDescriptionIgnoreCase(
+			@PathVariable("text") String text) {
+		logger.info("micro-service findByGeneralDescriptionIgnoreCase() invoked: " + text);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByGeneralDescriptionIgnoreCase(text);
+		logger.info("micro-service findByGeneralDescriptionIgnoreCase() found: " + codeContainer);
+		return codeContainer;
+	}
+	
+	@RequestMapping(value = "/codes/{codeNumber}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> findByNAICS(@PathVariable("codeNumber") String codeNumber) {
+		logger.info("micro-service findByNAICS() invoked: " + codeNumber);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByNAICS(codeNumber);
+		logger.info("micro-service findByNAICS() found: " + codeContainer);
+		return codeContainer;
+	}
+	
+	@RequestMapping(value = "/codes/{codeNumber}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> findByNCCI(@PathVariable("codeNumber") String codeNumber) {
+		logger.info("micro-service findByNCCI() invoked: " + codeNumber);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByNCCI(codeNumber);
+		logger.info("micro-service findByNCCI() found: " + codeContainer);
+		return codeContainer;
+	}
+	
+	
 }
