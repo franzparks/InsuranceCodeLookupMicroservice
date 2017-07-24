@@ -26,11 +26,11 @@ import com.insurance.services.web.WebServer;
 import com.insurance.utils.PDFManager;
 
 @SpringBootApplication()
-@EnableAutoConfiguration
-@EnableDiscoveryClient
-@ComponentScan({"com.insurance"})
-@EntityScan("com.insurance.domain")
-@EnableJpaRepositories("com.insurance.repository")
+//@EnableAutoConfiguration
+//@EnableDiscoveryClient
+//@ComponentScan({"com.insurance"})
+//@EntityScan("com.insurance.domain")
+//@EnableJpaRepositories("com.insurance.repository")
 public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 	
 	enum CODES { ISO_DESC, ISO_CGL, SIC, NAICS, GENERAL_DESC, NCCI, CA_WC, DE_WC, MI_WC, NJ_WC, NY_WC, PA_WC, TX_WC}
