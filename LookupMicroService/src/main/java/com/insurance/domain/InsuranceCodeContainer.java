@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.insurance.model;
+package com.insurance.domain;
 
 import java.io.Serializable;
 
