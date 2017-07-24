@@ -78,5 +78,15 @@ public class LookupsController {
 		return codeContainer;
 	}
 	
+	@RequestMapping(value = "/codes/doSearch/{codeNumber}", produces = "application/json")
+	public @ResponseBody List<InsuranceCodeContainer> search(@PathVariable("codeNumber") String codeNumber) {
+		logger.info("micro-service search() invoked: " + codeNumber);
+		List<InsuranceCodeContainer> codeContainer = codeLookupService.findByNCCI(codeNumber);
+		codeContainer.addAll(codeLookupService.findByCaWC(codeNumber));
+		codeContainer.addAll(codeLookupService.findByNAICS(codeNumber));
+		logger.info("micro-service search() found: " + codeContainer);
+		return codeContainer;
+	}
+	
 	
 }

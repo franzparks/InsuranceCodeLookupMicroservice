@@ -10,8 +10,10 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author francisphiri
@@ -75,5 +77,22 @@ public class WebLookupsController {
 		if (codes != null)
 			model.addAttribute("codes", codes);
 		return "codes";
+	}
+	
+	@RequestMapping(value = "/codes/search", method = RequestMethod.GET)
+	public String searchForm(Model model) {
+		model.addAttribute("searchCriteria", new SearchCriteria());
+		return "accountSearch";
+	}
+
+	
+	@RequestMapping(value = "/codes/dosearch")
+	public String doSearch(Model model, SearchCriteria criteria,
+			BindingResult result) {
+		logger.info("web-service search() invoked: " + criteria);
+		
+		String codeNumber = criteria.getCodeNumber();
+		return byNCCI(model, codeNumber);
+
 	}
 }
