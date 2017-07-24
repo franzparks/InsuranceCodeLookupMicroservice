@@ -1,5 +1,9 @@
 package com.insurance;
 
+
+import io.pivotal.microservices.services.accounts.AccountsServer;
+
+import java.util.logging.Logger;
 import java.util.List;
 import java.util.Map;
 
@@ -13,8 +17,11 @@ import com.insurance.utils.PDFManager;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 public class LookupMicroServiceApplicationServer {
+	
+	protected Logger logger = Logger.getLogger(LookupMicroServiceApplicationServer.class.getName());
 
 	public static void main(String[] args) {
+		
 		// Tell server to look for lookup-server.properties or
 		// lookup-server.yml
 		System.setProperty("spring.config.name", "lookup-server");
