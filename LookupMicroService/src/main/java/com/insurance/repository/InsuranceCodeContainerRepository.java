@@ -3,6 +3,8 @@
  */
 package com.insurance.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.insurance.model.InsuranceCodeContainer;
@@ -12,5 +14,5 @@ import com.insurance.model.InsuranceCodeContainer;
  *
  */
 public interface InsuranceCodeContainerRepository extends JpaRepository<InsuranceCodeContainer, Long>{
-	
+	Optional<InsuranceCodeContainer> findByISODescription(String text);
 }

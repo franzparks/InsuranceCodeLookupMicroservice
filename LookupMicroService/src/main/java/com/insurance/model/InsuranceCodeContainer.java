@@ -24,137 +24,150 @@ public class InsuranceCodeContainer implements Serializable{
 	@GeneratedValue
 	protected Long id;
 	
-	protected String ISO_DESCRIPTION;
+	protected String iSODescription;
 	
-	protected String ISO_CGL;
+	protected String iSOcgl;
 	
-	protected String SIC;
+	protected String sIC;
 	
-	protected String NAICS;
+	protected String nAICS;
 	
-	protected String GENERAL_DESCRIPTION;
+	protected String generalDescription;
 	
-	protected String NCCI;
+	protected String nCCI;
 	
-	protected String CA_WC;
+	protected String caWC;
 	
-	protected String DE_WC;
+	protected String deWC;
 	
-	protected String MI_WC;
+	protected String miWC;
 	
-	protected String NJ_WC;
+	protected String njWC;
 	
-	protected String NY_WC;
+	protected String nyWC;
 	
-	protected String PA_WC;
+	protected String paWC;
 	
-	protected String TX_WC;
+	protected String txWC;
 	
-	InsuranceCodeContainer(){}
+	InsuranceCodeContainer(){} //for JPA
 
-	public String getISO_DESCRIPTION() {
-		return ISO_DESCRIPTION;
+	public InsuranceCodeContainer(String iSODescription, String nAICS,
+            String generalDescription, String nCCI, String caWC) {
+	    super();
+	    this.iSODescription = iSODescription;
+	    this.nAICS = nAICS;
+	    this.generalDescription = generalDescription;
+	    this.nCCI = nCCI;
+	    this.caWC = caWC;
+    }
+
+	public String getiSODescription() {
+		return iSODescription;
 	}
 
-	public String getISO_CGL() {
-		return ISO_CGL;
+	public String getiSOcgl() {
+		return iSOcgl;
 	}
 
-	public String getSIC() {
-		return SIC;
+	public String getsIC() {
+		return sIC;
 	}
 
-	public String getNAICS() {
-		return NAICS;
+	public String getnAICS() {
+		return nAICS;
 	}
 
-	public String getGENERAL_DESCRIPTION() {
-		return GENERAL_DESCRIPTION;
+	public String getGeneralDescription() {
+		return generalDescription;
 	}
 
-	public String getNCCI() {
-		return NCCI;
+	public String getnCCI() {
+		return nCCI;
 	}
 
-	public String getCA_WC() {
-		return CA_WC;
+	public String getCaWC() {
+		return caWC;
 	}
 
-	public String getDE_WC() {
-		return DE_WC;
+	public String getDeWC() {
+		return deWC;
 	}
 
-	public String getMI_WC() {
-		return MI_WC;
+	public String getMiWC() {
+		return miWC;
 	}
 
-	public String getNJ_WC() {
-		return NJ_WC;
+	public String getNjWC() {
+		return njWC;
 	}
 
-	public String getNY_WC() {
-		return NY_WC;
+	public String getNyWC() {
+		return nyWC;
 	}
 
-	public String getPA_WC() {
-		return PA_WC;
+	public String getPaWC() {
+		return paWC;
 	}
 
-	public String getTX_WC() {
-		return TX_WC;
+	public String getTxWC() {
+		return txWC;
 	}
 
-	public void setISO_DESCRIPTION(String iSO_DESCRIPTION) {
-		ISO_DESCRIPTION = iSO_DESCRIPTION;
+	public void setiSODescription(String iSODescription) {
+		this.iSODescription = iSODescription;
 	}
 
-	public void setISO_CGL(String iSO_CGL) {
-		ISO_CGL = iSO_CGL;
+	public void setiSOcgl(String iSOcgl) {
+		this.iSOcgl = iSOcgl;
 	}
 
-	public void setSIC(String sIC) {
-		SIC = sIC;
+	public void setsIC(String sIC) {
+		this.sIC = sIC;
 	}
 
-	public void setNAICS(String nAICS) {
-		NAICS = nAICS;
+	public void setnAICS(String nAICS) {
+		this.nAICS = nAICS;
 	}
 
-	public void setGENERAL_DESCRIPTION(String gENERAL_DESCRIPTION) {
-		GENERAL_DESCRIPTION = gENERAL_DESCRIPTION;
+	public void setGeneralDescription(String generalDescription) {
+		this.generalDescription = generalDescription;
 	}
 
-	public void setNCCI(String nCCI) {
-		NCCI = nCCI;
+	public void setnCCI(String nCCI) {
+		this.nCCI = nCCI;
 	}
 
-	public void setCA_WC(String cA_WC) {
-		CA_WC = cA_WC;
+	public void setCaWC(String caWC) {
+		this.caWC = caWC;
 	}
 
-	public void setDE_WC(String dE_WC) {
-		DE_WC = dE_WC;
+	public void setDeWC(String deWC) {
+		this.deWC = deWC;
 	}
 
-	public void setMI_WC(String mI_WC) {
-		MI_WC = mI_WC;
+	public void setMiWC(String miWC) {
+		this.miWC = miWC;
 	}
 
-	public void setNJ_WC(String nJ_WC) {
-		NJ_WC = nJ_WC;
+	public void setNjWC(String njWC) {
+		this.njWC = njWC;
 	}
 
-	public void setNY_WC(String nY_WC) {
-		NY_WC = nY_WC;
+	public void setNyWC(String nyWC) {
+		this.nyWC = nyWC;
 	}
 
-	public void setPA_WC(String pA_WC) {
-		PA_WC = pA_WC;
+	public void setPaWC(String paWC) {
+		this.paWC = paWC;
 	}
 
-	public void setTX_WC(String tX_WC) {
-		TX_WC = tX_WC;
+	public void setTxWC(String txWC) {
+		this.txWC = txWC;
 	}
+	
+	
+
 	
 	
 	
