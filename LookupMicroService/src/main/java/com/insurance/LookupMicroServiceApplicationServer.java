@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import com.insurance.domain.InsuranceCodeContainer;
 import com.insurance.services.CodeLookupService;
 import com.insurance.utils.PDFManager;
 
@@ -40,5 +41,14 @@ public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 		String[] arrayOfPDFLines = pdfManager.ToText().split("\n");
 		
 		List<Map<String, String>> listOfMappings = pdfManager.getListOfMappings(arrayOfPDFLines);
+		
+		for(Map<String, String> mapping:listOfMappings){
+			codeLookupService.save(new InsuranceCodeContainer(mapping.get(CODES.ISO_DESC), 
+					mapping.get(CODES.NAICS), mapping.get(CODES.GENERAL_DESC), mapping.get(CODES.NCCI), 
+					mapping.get(CODES.CA_WC)));
+		}
 	}
 }
+
+enum CODES { ISO_DESC, ISO_CGL, SIC, NAICS, GENERAL_DESC, NCCI, CA_WC, DE_WC, MI_WC, NJ_WC, NY_WC, PA_WC, TX_WC}
+
