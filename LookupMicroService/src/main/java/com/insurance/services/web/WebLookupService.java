@@ -21,18 +21,18 @@ import org.springframework.web.client.RestTemplate;
  *
  */
 @Service
-public class WebAccountsService {
+public class WebLookupService {
 	
 	@Autowired
-	//@LoadBalanced
+	@LoadBalanced
 	protected RestTemplate restTemplate;
 
 	protected String serviceUrl;
 
-	protected Logger logger = Logger.getLogger(WebAccountsService.class
+	protected Logger logger = Logger.getLogger(WebLookupService.class
 			.getName());
 
-	public WebAccountsService(String serviceUrl) {
+	public WebLookupService(String serviceUrl) {
 		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
 				: "http://" + serviceUrl;
 	}

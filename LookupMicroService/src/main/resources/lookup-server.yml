@@ -25,4 +25,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
   instance:
-    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    leaseRenewalIntervalInSeconds: 15   # DO NOT DO THIS IN PRODUCTION

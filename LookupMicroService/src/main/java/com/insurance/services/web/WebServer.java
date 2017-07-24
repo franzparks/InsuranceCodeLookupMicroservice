@@ -44,19 +44,19 @@ public class WebServer {
 	 * 
 	 * @return A new service instance.
 	 */
-	@Bean
-	public WebAccountsService accountsService() {
-		return new WebAccountsService(LOOKUP_SERVICE_URL);
+	//@Bean
+	public WebLookupService lookupService() {
+		return new WebLookupService(LOOKUP_SERVICE_URL);
 	}
 
 	/**
-	 * Create the controller, passing it the {@link WebAccountsService} to use.
+	 * Create the controller, passing it the {@link WebLookupService} to use.
 	 * 
 	 * @return
 	 */
 	@Bean
 	public WebAccountsController accountsController() {
-		return new WebAccountsController(accountsService());
+		return new WebAccountsController(lookupService());
 	}
 
 	@Bean

@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebAccountsController {
 	
 	@Autowired
-	protected WebAccountsService accountsService;
+	protected WebLookupService accountsService;
 
 	protected Logger logger = Logger.getLogger(WebAccountsController.class
 			.getName());
 
-	public WebAccountsController(WebAccountsService accountsService) {
+	public WebAccountsController(WebLookupService accountsService) {
 		this.accountsService = accountsService;
 	}
 	

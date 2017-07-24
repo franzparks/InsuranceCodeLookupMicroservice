@@ -18,7 +18,7 @@ error:
 #  2. Reduce lease-renewal time so processes register more quickly
 eureka:
   instance:
-     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+     leaseRenewalIntervalInSeconds: 35   # DO NOT DO THIS IN PRODUCTION
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
