@@ -47,7 +47,7 @@ public class PDFManager {
 	   return text;
     }
     
-    private static List<Map<String, String>> getListOfMappings(String[] arr){
+    public  List<Map<String, String>> getListOfMappings(String[] arr){
     	
 		List<Map<String, String>> listOfRowsOfMappings = new ArrayList<>();
 		Map<String, String> currentlyProcessedCodes = new HashMap<>();
