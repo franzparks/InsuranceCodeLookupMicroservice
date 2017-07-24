@@ -6,6 +6,7 @@ package com.insurance.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.insurance.domain.InsuranceCodeContainer;
 
@@ -13,6 +14,8 @@ import com.insurance.domain.InsuranceCodeContainer;
  * @author francisphiri
  *
  */
+
+@RepositoryRestResource
 public interface InsuranceCodeContainerRepository extends JpaRepository<InsuranceCodeContainer, Long>{
 	Optional<InsuranceCodeContainer> findByISODescription(String text);
 	Optional<InsuranceCodeContainer> findByNAICS(String text);

@@ -56,7 +56,7 @@ public class WebLookupService {
 	}
 	
 	public InsuranceCodeContainer findByCode(String codeNumber) {
-
+		this.serviceUrl = "http://LOOKUP-SERVICE";
 		logger.info("findByCode() invoked: for " + codeNumber);
 		return restTemplate.getForObject(serviceUrl + "/codes/{codeNumber}",
 				InsuranceCodeContainer.class, codeNumber);

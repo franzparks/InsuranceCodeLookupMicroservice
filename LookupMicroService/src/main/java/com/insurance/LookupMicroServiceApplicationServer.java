@@ -51,7 +51,7 @@ public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 	
 	@Override
     public void run(String... arg0) throws Exception {
-		/*PDFManager	pdfManager	= new PDFManager();
+		PDFManager	pdfManager	= new PDFManager();
 		pdfManager.setFilePath("data/fastcompclasscodecrossreferenceguide.pdf");
 		String[] arrayOfPDFLines = pdfManager.ToText().split("\n");
 		
@@ -61,7 +61,7 @@ public class LookupMicroServiceApplicationServer implements CommandLineRunner{
 			codeLookupService.save(new InsuranceCodeContainer(mapping.get(CODES.ISO_DESC), 
 					mapping.get(CODES.NAICS), mapping.get(CODES.GENERAL_DESC), mapping.get(CODES.NCCI), 
 					mapping.get(CODES.CA_WC)));
-		}*/
+		}
 	}
 }
 
