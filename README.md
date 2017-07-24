@@ -6,5 +6,5 @@ A look up micro service for industry codes in the insurance industry
 - Since the registry, microservice and web app (which encapsulates the microservice for much easier consumption) all run on Tomcat,
 run the applications in this order in dev: RegistrationServer.java (registry can be seen on http://localhost:1111/), then 
 LookupMicroServiceApplicationServer.java (the micro service which gets data from the pdf and makes it available as a service and runs on 
-http://localhost:2222/), and then WebServer.java (the web server). The webserver still has some issues, will try to resolve them asap.
+http://localhost:2222/), and then WebServer.java (the web server which runs on http://localhost:3333/). The webserver still has some issues, will try to resolve them asap.
 
