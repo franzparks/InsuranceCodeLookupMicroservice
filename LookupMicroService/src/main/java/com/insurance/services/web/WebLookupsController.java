@@ -4,6 +4,7 @@
 package com.insurance.services.web;
 
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,21 +35,43 @@ public class WebLookupsController {
 		return "index";
 	}
 	
-	@RequestMapping("/codes/all")
-	public InsuranceCodeContainer allCodes() {
-		return lookupService.findByCode("1741");
-		//return "index";
-	}
 	
-	//@RequestMapping("/codes/{codeNumber}")
-	public String byCodeNumber(Model model,
+	@RequestMapping("/codes/cacw/{codeNumber}")
+	public String byCaWC(Model model,
 			@PathVariable("codeNumber") String codeNumber) {
 
-		logger.info("web-service byCodeNumber() invoked: " + codeNumber);
+		logger.info("web-service byCaWC() invoked: " + codeNumber);
 
-		//InsuranceCodeContainer codeContainer = accountsService.findByCode(codeNumber);
-		//logger.info("web-service byCode() found: " + codeContainer);
-		//model.addAttribute("codeContainer", codeContainer);
+		List<InsuranceCodeContainer> containers = lookupService.findByCaWC(codeNumber);
+		logger.info("web-service byCaWC() found: " + containers);
+		if (containers != null)
+			model.addAttribute("containers", containers);
+		return "index";
+	}
+	
+	@RequestMapping("/codes/naics/{codeNumber}")
+	public String byNAICS(Model model,
+			@PathVariable("codeNumber") String codeNumber) {
+
+		logger.info("web-service byNAICS() invoked: " + codeNumber);
+
+		List<InsuranceCodeContainer> containers = lookupService.findByNAICS(codeNumber);
+		logger.info("web-service byNAICS() found: " + containers);
+		if (containers != null)
+			model.addAttribute("containers", containers);
+		return "index";
+	}
+	
+	@RequestMapping("/codes/naics/{codeNumber}")
+	public String byNCCI(Model model,
+			@PathVariable("codeNumber") String codeNumber) {
+
+		logger.info("web-service byNCCI() invoked: " + codeNumber);
+
+		List<InsuranceCodeContainer> containers = lookupService.findByNCCI(codeNumber);
+		logger.info("web-service byNCCI() found: " + containers);
+		if (containers != null)
+			model.addAttribute("containers", containers);
 		return "index";
 	}
 }
