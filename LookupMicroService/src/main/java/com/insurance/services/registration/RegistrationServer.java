@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.insurance.services;
+package com.insurance.services.registration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
