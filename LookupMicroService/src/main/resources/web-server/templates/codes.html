@@ -27,8 +27,8 @@
 
 			<tbody>
 				<tr th:each="code : ${codes}">
-					<td th:text="${code.caWC}"></td>
-					<td th:text="${code.iSODescription}">Owner</td>
+					<td th:text="${code.caWC}">Code</td>
+					<td th:text="${code.iSODescription}">Description</td>
 	
 				</tr>
 			</tbody>
@@ -37,7 +37,7 @@
 
 	<div style="text-align: right">
 		Options: <a th:href="@{/}">Home</a> | <a
-			th:href="@{/accounts/search}">Account Search</a>
+			th:href="@{/codes/search}">Code Search</a>
 	</div>
 
 	<div th:replace="footer :: copy"></div>

@@ -62,7 +62,7 @@ public class WebLookupsController {
 		return "codes";
 	}
 	
-	@RequestMapping("/codes/naics/{codeNumber}")
+	@RequestMapping("/codes/ncci/{codeNumber}")
 	public String byNCCI(Model model,
 			@PathVariable("codeNumber") String codeNumber) {
 
