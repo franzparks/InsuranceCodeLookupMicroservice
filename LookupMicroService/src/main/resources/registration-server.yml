@@ -1,4 +1,4 @@
-# Configuring The Discovery Server
+#Configuring The Discovery Server
 eureka:
   instance:
     hostname: localhost
