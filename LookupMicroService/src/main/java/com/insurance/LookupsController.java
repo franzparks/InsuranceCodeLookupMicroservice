@@ -35,7 +35,7 @@ public class LookupsController {
 		return codeContainer;
 	}
 	
-	@RequestMapping(value = "/codes/description/{text}", produces = "application/json")
+	//@RequestMapping(value = "/codes/description/{text}", produces = "application/json")
 	public @ResponseBody List<InsuranceCodeContainer> findByGeneralDescription(
 			@PathVariable("text") String text) {
 		logger.info("micro-service findByGeneralDescription() invoked: " + text);

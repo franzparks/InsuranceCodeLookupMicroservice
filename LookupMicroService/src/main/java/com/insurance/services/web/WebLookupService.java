@@ -30,7 +30,7 @@ public class WebLookupService {
 	@LoadBalanced
 	protected RestTemplate restTemplate;
 
-	protected String serviceUrl = "http://LOOKUP-SERVICE";;
+	protected String serviceUrl = "http://LOOKUP-SERVICE"; //"http://LOOKUP-SERVICE";
 
 	protected Logger logger = Logger.getLogger(WebLookupService.class.getName());
 
@@ -56,6 +56,7 @@ public class WebLookupService {
 					+ "/codes/cacw/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
 		} catch (HttpClientErrorException e) { // 404
 			// Nothing found
+			System.out.println("error:::::::::::::::::::::::" + e);
 		}
 
 		if (containers == null || containers.length == 0)
@@ -73,6 +74,7 @@ public class WebLookupService {
 					+ "/codes/naics/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
 		} catch (HttpClientErrorException e) { // 404
 			// Nothing found
+			System.out.println("error:::::::::::::::::::::::" + e);
 		}
 
 		if (containers == null || containers.length == 0)
@@ -90,6 +92,7 @@ public class WebLookupService {
 					+ "/codes/ncci/{codeNumber}", InsuranceCodeContainer[].class, codeNumber);
 		} catch (HttpClientErrorException e) { // 404
 			// Nothing found
+			System.out.println("error:::::::::::::::::::::::" + e);
 		}
 
 		if (containers == null || containers.length == 0)

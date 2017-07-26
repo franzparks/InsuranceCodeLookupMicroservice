@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,6 +34,10 @@ public class WebLookupsController {
 	/*public WebLookupsController(WebLookupService lookupService) {
 		this.lookupService = lookupService;
 	}*/
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.setAllowedFields("codeNumber");
+	}
 	
 	@RequestMapping("/codes")
 	public String goHome() {
@@ -82,7 +88,7 @@ public class WebLookupsController {
 	@RequestMapping(value = "/codes/search", method = RequestMethod.GET)
 	public String searchForm(Model model) {
 		model.addAttribute("searchCriteria", new SearchCriteria());
-		return "accountSearch";
+		return "codeSearch";
 	}
 
 	

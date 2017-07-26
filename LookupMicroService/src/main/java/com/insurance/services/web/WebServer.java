@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(useDefaultFilters = false) // Disable component scanner
+//@ComponentScan(useDefaultFilters = false) // Disable component scanner
 public class WebServer {
 	
 	/**
@@ -29,8 +29,11 @@ public class WebServer {
 	 */
 	public static final String LOOKUP_SERVICE_URL = "http://LOOKUP-SERVICE";
 	
-	//@Autowired
-	//protected WebLookupService lookupService;
+	@Autowired
+	protected WebLookupService lookupService;
+	
+	@Autowired
+	protected WebLookupsController webLookupsController;
 	
 	public static void main(String[] args) {
 		// Tell server to look for web-server.properties or web-server.yml
